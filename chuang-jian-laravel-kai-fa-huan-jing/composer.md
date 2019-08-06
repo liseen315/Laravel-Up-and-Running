@@ -1,0 +1,4 @@
+# Composer
+
+不论你使用什么机器开发你都需要全局安装Composer，如果你不熟悉Composer的话，其实Composer是现代PHP开发的基础，Composer是PHP的依赖管理工具，它类似Nodejs的NPM以及Ruby的RubyGems，就像NPM一样，Composer也是我们测试，本地加载脚本,安装脚本，以及更多的基础。你需要使用Composer安装Laravel，升级Laravel，并引入外部依赖。
+
