@@ -30,4 +30,5 @@
     * [Lambo:一款增强的"Laravel New"工具](chuang-jian-laravel-kai-fa-huan-jing/chuang-jian-yi-ge-xin-de-laravel-xiang-mu/lambo-yi-kuan-zeng-qiang-de-laravel-new-gong-ju.md)
   * [Laravel的目录结构](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/README.md)
     * [文件夹](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/wen-jian-jia.md)
+    * [其他零散文件](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/qi-ta-ling-san-wen-jian.md)
 
