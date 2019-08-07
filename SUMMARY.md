@@ -41,5 +41,6 @@
     * [什么是MVC](lu-you-yu-kong-zhi-qi/mvc-http-he-rest-jian-jie/shen-me-shi-mvc.md)
     * [HTTP verbs](lu-you-yu-kong-zhi-qi/mvc-http-he-rest-jian-jie/http-verbs.md)
     * [什么是REST](lu-you-yu-kong-zhi-qi/mvc-http-he-rest-jian-jie/shen-me-shi-rest.md)
-  * [定义路由](lu-you-yu-kong-zhi-qi/ding-yi-lu-you.md)
+  * [定义路由](lu-you-yu-kong-zhi-qi/ding-yi-lu-you/README.md)
+    * [Route Verbs](lu-you-yu-kong-zhi-qi/ding-yi-lu-you/route-verbs.md)
 
