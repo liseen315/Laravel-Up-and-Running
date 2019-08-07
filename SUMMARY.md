@@ -31,4 +31,9 @@
   * [Laravel的目录结构](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/README.md)
     * [文件夹](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/wen-jian-jia.md)
     * [其他零散文件](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/qi-ta-ling-san-wen-jian.md)
+  * [配置](chuang-jian-laravel-kai-fa-huan-jing/pei-zhi/README.md)
+    * [.env文件](chuang-jian-laravel-kai-fa-huan-jing/pei-zhi/.env-wen-jian.md)
+  * [测试](chuang-jian-laravel-kai-fa-huan-jing/ce-shi.md)
+  * [运行](chuang-jian-laravel-kai-fa-huan-jing/yun-hang.md)
+  * [总结](chuang-jian-laravel-kai-fa-huan-jing/zong-jie.md)
 
