@@ -4,7 +4,7 @@
 
 1. [为什么是Laravel](he-wei-laravel/)
 2. [创建Laravel开发环境](chuang-jian-laravel-kai-fa-huan-jing/)
-3. Routing and Controllers
+3. [路由与控制器](lu-you-yu-kong-zhi-qi/)
 4. Blade Templating
 5. Database and Eloquent
 6. Frontend Components
