@@ -28,5 +28,6 @@
     * [使用Laravel安装工具安装Laravel](chuang-jian-laravel-kai-fa-huan-jing/chuang-jian-yi-ge-xin-de-laravel-xiang-mu/shi-yong-laravel-an-zhuang-gong-ju-an-zhuang-laravel.md)
     * [使用Composer的create-project功能安装Laravel](chuang-jian-laravel-kai-fa-huan-jing/chuang-jian-yi-ge-xin-de-laravel-xiang-mu/shi-yong-composer-de-createproject-gong-neng-an-zhuang-laravel.md)
     * [Lambo:一款增强的"Laravel New"工具](chuang-jian-laravel-kai-fa-huan-jing/chuang-jian-yi-ge-xin-de-laravel-xiang-mu/lambo-yi-kuan-zeng-qiang-de-laravel-new-gong-ju.md)
-  * [Laravel的目录结构](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou.md)
+  * [Laravel的目录结构](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/README.md)
+    * [文件夹](chuang-jian-laravel-kai-fa-huan-jing/laravel-de-mu-lu-jie-gou/wen-jian-jia.md)
 

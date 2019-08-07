@@ -22,3 +22,11 @@
 ├── webpack.mix.js
 ```
 
+{% hint style="info" %}
+与5.4版本的不同
+
+用5.4版本Laravel创建的项目,你会发现有个叫gulpfile.js的文件而却找不到webpack.mix.js文件,这说明项目是以Laravel Elixir运行的而不是Laravel Mix
+{% endhint %}
+
+让我们逐一的熟悉一下这些目录.
+
