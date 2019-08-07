@@ -36,5 +36,9 @@
   * [运行](chuang-jian-laravel-kai-fa-huan-jing/yun-hang.md)
   * [测试](chuang-jian-laravel-kai-fa-huan-jing/ce-shi.md)
   * [总结](chuang-jian-laravel-kai-fa-huan-jing/zong-jie.md)
-* [路由与控制器](lu-you-yu-kong-zhi-qi.md)
+* [路由与控制器](lu-you-yu-kong-zhi-qi/README.md)
+  * [MVC HTTP和REST简介](lu-you-yu-kong-zhi-qi/mvc-http-he-rest-jian-jie/README.md)
+    * [什么是MVC](lu-you-yu-kong-zhi-qi/mvc-http-he-rest-jian-jie/shen-me-shi-mvc.md)
+    * [HTTP verbs](lu-you-yu-kong-zhi-qi/mvc-http-he-rest-jian-jie/http-verbs.md)
+    * [什么是REST](lu-you-yu-kong-zhi-qi/mvc-http-he-rest-jian-jie/shen-me-shi-rest.md)
 
