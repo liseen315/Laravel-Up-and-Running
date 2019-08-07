@@ -36,4 +36,5 @@
   * [运行](chuang-jian-laravel-kai-fa-huan-jing/yun-hang.md)
   * [测试](chuang-jian-laravel-kai-fa-huan-jing/ce-shi.md)
   * [总结](chuang-jian-laravel-kai-fa-huan-jing/zong-jie.md)
+* [路由与控制器](lu-you-yu-kong-zhi-qi.md)
 
