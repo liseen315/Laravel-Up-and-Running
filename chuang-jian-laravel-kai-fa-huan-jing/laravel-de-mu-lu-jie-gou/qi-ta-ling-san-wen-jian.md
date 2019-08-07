@@ -32,7 +32,7 @@ _readme.md_
 
 _server.php_
 
-试图允许功能较少的服务器仍然预览Laravel应用程序的备份服务器
+允许功能较少的服务器仍然可以预览Laravel应用程序的备份服务器
 
 webpack.mix.js
 
