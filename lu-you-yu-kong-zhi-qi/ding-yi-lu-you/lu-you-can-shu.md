@@ -26,9 +26,21 @@ Route::get('users/{id?}',function ($id='fallbackId') {
 
 而且，您可以使用正则表达式（regex）来定义路由只在在参数满足特定要求时匹配，如示例3-7所示。
 
+{% code-tabs %}
+{% code-tabs-item title="Example 3-7. Regular expression route constraints" %}
 ```php
 Route::get('users/{id}',function ($id) {
     return $id;
 })->where('id','[0-9]+');
+
+Route::get('users/{username}',function ($username) {
+    return $username;
+})->where('username','[A-Za-z]+');
+
+Route::get('posts/{id}/{slug}',function ($id,$slug) {
+    return $id.$slug;
+})->where(['id'=>'[0-9]+','slug'=>'[A-Za-z]+']);
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
