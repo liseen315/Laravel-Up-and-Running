@@ -67,4 +67,10 @@
   * [自定义响应](lu-you-yu-kong-zhi-qi/zi-ding-yi-xiang-ying.md)
   * [测试](lu-you-yu-kong-zhi-qi/ce-shi.md)
   * [总结](lu-you-yu-kong-zhi-qi/zong-jie.md)
+* [Blade 模板引擎](blade-mo-ban-yin-qing/README.md)
+  * [输出数据](blade-mo-ban-yin-qing/shu-chu-shu-ju.md)
+  * [控制结构](blade-mo-ban-yin-qing/kong-zhi-jie-gou.md)
+  * [模板继承](blade-mo-ban-yin-qing/mo-ban-ji-cheng.md)
+  * [视图Composer和服务注入](blade-mo-ban-yin-qing/shi-tu-composer-he-fu-wu-zhu-ru.md)
+  * [自定义Blade指令](blade-mo-ban-yin-qing/zi-ding-yi-blade-zhi-ling.md)
 
