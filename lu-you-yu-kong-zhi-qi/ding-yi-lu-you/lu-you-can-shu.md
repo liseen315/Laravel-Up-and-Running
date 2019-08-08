@@ -44,3 +44,5 @@ Route::get('posts/{id}/{slug}',function ($id,$slug) {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+你可能已经猜到了，如果您访问的路径与路由字符串匹配，但regex与参数不匹配，则不会匹配。由于路由是从上到下匹配的，users/abc将跳过示例3-7中的第一个闭包，但它将与第二个闭包匹配，因此它将被路由到那里。另一方面，posts/abc/123与任何闭包都不匹配，因此它将返回404（未找到）错误。
+
