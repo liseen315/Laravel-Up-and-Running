@@ -46,7 +46,13 @@ Route::get('posts/{id}/{slug}',function ($id,$slug) {
 
 你可能已经猜到了，如果您访问的路径与路由字符串匹配，但regex与参数不匹配，则不会匹配。由于路由是从上到下匹配的，users/abc将跳过示例3-7中的第一个闭包，但它将与第二个闭包匹配，因此它将被路由到那里。另一方面，posts/abc/123与任何闭包都不匹配，因此它将返回404（未找到）错误。
 
-> 路由参数与闭包/控制器方法参数命名之间的关系
->
-> 正如您在示例3-5中看到的，最常见的是路由参数\(id\)和注入到路由方法\(函数\($id\)\)使用相同的名称,但是这是必须的吗？
+> 路由参数与闭包/控制器方法参数命名之间的关系 正如您在示例3-5中看到的，最常见的是路由参数\(id\)和注入到路由方法\(函数\($id\)\)使用相同的名称,但是这是必须的吗？ 不是必须的,除非你使用的路由模型绑定,唯一定义路由参数与哪个方法参数匹配的是它们的顺序（从左到右）如下:
+
+```php
+Route::get('users/{userId}/comments/{commentId}',function ($thisIsActuallyTheUserId,$thisIsReallyTheCommentId) {
+    return $thisIsActuallyTheUserId.'----'.$thisIsReallyTheCommentId;
+});
+```
+
+> 尽管可以这样做,但是不推荐这么做,因为不统一命名的代码可读性太差.
 
