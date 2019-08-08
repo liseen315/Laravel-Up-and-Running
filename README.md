@@ -22,4 +22,6 @@
 18. The Laravel Ecosystem
 
 > 记录php web 框架Laravel学习,因为水平有限,有些内容可能会根据个人理解进行粗略翻译.尽量保证内容的准确性.
+>
+> 译者的虚拟环境为Homestead,Laravel版本为Laravel Framework 5.8.27
 

@@ -52,4 +52,5 @@
       * [频率限制](lu-you-yu-kong-zhi-qi/lu-you-zu/zhong-jian-jian/pin-lv-xian-zhi.md)
     * [路径前缀](lu-you-yu-kong-zhi-qi/lu-you-zu/lu-jing-qian-zhui.md)
     * [兜底路由](lu-you-yu-kong-zhi-qi/lu-you-zu/dou-di-lu-you.md)
+    * [子域路由](lu-you-yu-kong-zhi-qi/lu-you-zu/zi-yu-lu-you.md)
 
