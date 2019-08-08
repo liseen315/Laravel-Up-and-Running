@@ -22,3 +22,5 @@ Route::group(['prefix' => ''],function (){
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+默认情况下，路由组实际上不执行任何操作,上面的代码与分开定义路由没有什么区别
+
