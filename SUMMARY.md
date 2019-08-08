@@ -51,4 +51,5 @@
       * [在控制器内应用中间件](lu-you-yu-kong-zhi-qi/lu-you-zu/zhong-jian-jian/zai-kong-zhi-qi-nei-ying-yong-zhong-jian-jian.md)
       * [频率限制](lu-you-yu-kong-zhi-qi/lu-you-zu/zhong-jian-jian/pin-lv-xian-zhi.md)
     * [路径前缀](lu-you-yu-kong-zhi-qi/lu-you-zu/lu-jing-qian-zhui.md)
+    * [兜底路由](lu-you-yu-kong-zhi-qi/lu-you-zu/dou-di-lu-you.md)
 
