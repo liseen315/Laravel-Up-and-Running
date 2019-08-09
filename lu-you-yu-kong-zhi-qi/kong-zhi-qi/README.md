@@ -83,3 +83,35 @@ Route::get('/','TaskController@index');
 >
 > 这意味着，如果您有一个完全限定类名为”App\Http\Controllers\API\ExercisesController“的控制器，您将在路由定义中使用API\ExercisesController引用它。
 
+那么，控制器方法的最常见用法将类似于示例3-24，它与示例3-19中的闭包路由功能一致。
+
+{% code-tabs %}
+{% code-tabs-item title="Example 3-24. Common controller method example" %}
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TaskController extends Controller
+{
+    public function index()
+    {
+        return view('tasks.index')->with('tasks', Task::all());
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+控制器加载了”resources/views/tasks/index.blade.php“ 或者是”resources/ views/tasks/index.php“视图,然后传递了一个名为tasks的变量,变量的值通过Eloquent的`Task::all()`方法返回
+
+> 生成资源路由
+>
+> Laravel 5.3可以使用php artisan make:controller生成资源路由,在5.3+版本需要添加--resource来自动生成资源路由
+>
+> php artisan make:controller TasksController --resource
+
+
+
