@@ -64,6 +64,8 @@
   * [控制器](lu-you-yu-kong-zhi-qi/kong-zhi-qi/README.md)
     * [获取用户输入](lu-you-yu-kong-zhi-qi/kong-zhi-qi/huo-qu-yong-hu-shu-ru.md)
     * [将依赖注入到控制器](lu-you-yu-kong-zhi-qi/kong-zhi-qi/jiang-yi-lai-zhu-ru-dao-kong-zhi-qi.md)
+    * [资源控制器](lu-you-yu-kong-zhi-qi/kong-zhi-qi/zi-yuan-kong-zhi-qi.md)
+    * [API 资源控制器](lu-you-yu-kong-zhi-qi/kong-zhi-qi/api-zi-yuan-kong-zhi-qi.md)
   * [路由模型绑定](lu-you-yu-kong-zhi-qi/lu-you-mo-xing-bang-ding.md)
   * [路由缓存](lu-you-yu-kong-zhi-qi/lu-you-huan-cun.md)
   * [表单伪造](lu-you-yu-kong-zhi-qi/biao-dan-wei-zao.md)
