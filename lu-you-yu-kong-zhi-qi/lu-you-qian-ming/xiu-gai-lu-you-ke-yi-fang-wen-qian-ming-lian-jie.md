@@ -8,5 +8,18 @@ Route::get('invitations/{invitation}/{answer}', 'InvitationController')
     ->middleware('signed');
 ```
 
-如果你愿意,你可以在请求对象上使用hasValidSignature\(\)方法,代替使用signed中间件
+如果你愿意,你可以调用请求对象的hasValidSignature\(\)方法,代替使用signed中间件
+
+```php
+class InvitationController
+{
+    public function __invoke(Invitation $invitation, $answer, Request $request)
+    {
+        if (!$request->hasValidSignature()) {
+            abort(403);
+        }
+//
+    }
+}
+```
 
