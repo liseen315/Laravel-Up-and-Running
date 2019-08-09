@@ -57,6 +57,7 @@
     * [名称前缀](lu-you-yu-kong-zhi-qi/lu-you-zu/ming-cheng-qian-zhui.md)
   * [路由签名](lu-you-yu-kong-zhi-qi/lu-you-qian-ming/README.md)
     * [添加签名](lu-you-yu-kong-zhi-qi/lu-you-qian-ming/tian-jia-qian-ming.md)
+    * [修改路由可以访问签名链接](lu-you-yu-kong-zhi-qi/lu-you-qian-ming/xiu-gai-lu-you-ke-yi-fang-wen-qian-ming-lian-jie.md)
   * [控制器](lu-you-yu-kong-zhi-qi/kong-zhi-qi.md)
   * [视图](lu-you-yu-kong-zhi-qi/shi-tu.md)
   * [路由模型绑定](lu-you-yu-kong-zhi-qi/lu-you-mo-xing-bang-ding.md)
