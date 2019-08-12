@@ -85,7 +85,7 @@
   * [自定义响应](lu-you-yu-kong-zhi-qi/zi-ding-yi-xiang-ying/README.md)
     * [response\(\)-&gt;make\(\)](lu-you-yu-kong-zhi-qi/zi-ding-yi-xiang-ying/response-greater-than-make.md)
     * [response\(\)-&gt;json\(\) 和 -&gt;jsonp\(\)](lu-you-yu-kong-zhi-qi/zi-ding-yi-xiang-ying/responsejson-he-jsonp.md)
-  * [response\(\)-&gt;download\(\), -&gt;streamDownload\(\), 和 -&gt;file\(\)](lu-you-yu-kong-zhi-qi/responsedownload-streamdownload-he-file.md)
+    * [response\(\)-&gt;download\(\), -&gt;streamDownload\(\), 和 -&gt;file\(\)](lu-you-yu-kong-zhi-qi/zi-ding-yi-xiang-ying/responsedownload-streamdownload-he-file.md)
   * [测试](lu-you-yu-kong-zhi-qi/ce-shi.md)
   * [总结](lu-you-yu-kong-zhi-qi/zong-jie.md)
 * [Blade 模板引擎](blade-mo-ban-yin-qing/README.md)
