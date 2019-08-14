@@ -6,7 +6,7 @@
 2. [创建Laravel开发环境](chuang-jian-laravel-kai-fa-huan-jing/)
 3. [路由与控制器](lu-you-yu-kong-zhi-qi/)
 4. [Blade 模板引擎](blade-mo-ban-yin-qing/)
-5. Database and Eloquent
+5. [数据库和Eloquent](shu-ju-ku-he-eloquent/)
 6. Frontend Components
 7. Collecting and Handing User Data
 8. Artisan and Tinker
