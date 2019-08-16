@@ -53,7 +53,7 @@ public function vips()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-怎么样？ 惯例。 Eloquent假设表名（Contact成为contacts），并且您拥有一个功能齐全的Eloquent模型
+实例化了一个全功能Eloquent模型，这里假设表名为contacts
 
 让我们介绍如何使用Eloquent模型
 
