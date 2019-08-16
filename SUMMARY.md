@@ -126,7 +126,7 @@
     * [DB facade的基础用法](shu-ju-ku-he-eloquent/cha-xun-qi/db-facade-de-ji-chu-yong-fa.md)
     * [原生SQL](shu-ju-ku-he-eloquent/cha-xun-qi/yuan-sheng-sql.md)
     * [使用查询器](shu-ju-ku-he-eloquent/cha-xun-qi/shi-yong-cha-xun-qi.md)
-    * [事物](shu-ju-ku-he-eloquent/cha-xun-qi/shi-wu.md)
+    * [事务](shu-ju-ku-he-eloquent/cha-xun-qi/shi-wu.md)
   * [Eloquent介绍](shu-ju-ku-he-eloquent/eloquent-jie-shao.md)
   * [Eloquent事件](shu-ju-ku-he-eloquent/eloquent-shi-jian.md)
   * [测试](shu-ju-ku-he-eloquent/ce-shi.md)
