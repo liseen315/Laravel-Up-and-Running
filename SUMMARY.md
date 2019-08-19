@@ -135,6 +135,7 @@
     * [作用域](shu-ju-ku-he-eloquent/eloquent-jie-shao/zuo-yong-yu.md)
     * [使用访问,赋值和属性转换自定义字段](shu-ju-ku-he-eloquent/eloquent-jie-shao/shi-yong-fang-wen-fu-zhi-he-shu-xing-zhuan-huan-zi-ding-yi-zi-duan.md)
     * [Eloquent集合](shu-ju-ku-he-eloquent/eloquent-jie-shao/eloquent-ji-he.md)
+    * [Eloquent序列化](shu-ju-ku-he-eloquent/eloquent-jie-shao/eloquent-xu-lie-hua.md)
   * [Eloquent事件](shu-ju-ku-he-eloquent/eloquent-shi-jian.md)
   * [测试](shu-ju-ku-he-eloquent/ce-shi.md)
   * [总结](shu-ju-ku-he-eloquent/zong-jie.md)
