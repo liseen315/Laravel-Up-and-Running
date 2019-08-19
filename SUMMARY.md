@@ -129,6 +129,8 @@
     * [事务](shu-ju-ku-he-eloquent/cha-xun-qi/shi-wu.md)
   * [Eloquent介绍](shu-ju-ku-he-eloquent/eloquent-jie-shao/README.md)
     * [创建和定义Eloquent模型](shu-ju-ku-he-eloquent/eloquent-jie-shao/chuang-jian-he-ding-yi-eloquent-mo-xing.md)
+    * [使用Eloquent检索数据](shu-ju-ku-he-eloquent/eloquent-jie-shao/shi-yong-eloquent-jian-suo-shu-ju.md)
+    * [使用Eloquent插入和更新](shu-ju-ku-he-eloquent/eloquent-jie-shao/shi-yong-eloquent-cha-ru-he-geng-xin.md)
   * [Eloquent事件](shu-ju-ku-he-eloquent/eloquent-shi-jian.md)
   * [测试](shu-ju-ku-he-eloquent/ce-shi.md)
   * [总结](shu-ju-ku-he-eloquent/zong-jie.md)
