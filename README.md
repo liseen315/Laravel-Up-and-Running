@@ -7,7 +7,7 @@
 3. [路由与控制器](lu-you-yu-kong-zhi-qi/)
 4. [Blade 模板引擎](blade-mo-ban-yin-qing/)
 5. [数据库和Eloquent](shu-ju-ku-he-eloquent/)
-6. Frontend Components
+6. [前端组件](qian-duan-zu-jian/)
 7. Collecting and Handing User Data
 8. Artisan and Tinker
 9. User Authentication and Authorization
