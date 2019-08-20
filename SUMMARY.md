@@ -137,6 +137,7 @@
     * [Eloquent集合](shu-ju-ku-he-eloquent/eloquent-jie-shao/eloquent-ji-he.md)
     * [Eloquent序列化](shu-ju-ku-he-eloquent/eloquent-jie-shao/eloquent-xu-lie-hua.md)
     * [Eloquent关系](shu-ju-ku-he-eloquent/eloquent-jie-shao/eloquent-guan-xi.md)
+    * [子记录更新父记录时间戳](shu-ju-ku-he-eloquent/eloquent-jie-shao/zi-ji-lu-geng-xin-fu-ji-lu-shi-jian-chuo.md)
   * [Eloquent事件](shu-ju-ku-he-eloquent/eloquent-shi-jian.md)
   * [测试](shu-ju-ku-he-eloquent/ce-shi.md)
   * [总结](shu-ju-ku-he-eloquent/zong-jie.md)

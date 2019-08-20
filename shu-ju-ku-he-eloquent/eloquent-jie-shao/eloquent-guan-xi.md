@@ -251,9 +251,9 @@ class Contact extends Model {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-由于单个联系人不能拥有user\_id列，并且单个用户不能拥有contact\_id列，因此多对多关系依赖于连接两者的数据透视表。 这个表的常规命名是通过将两个单个表名放在一起，按字母顺序排序，并用下划线分隔它们来完成。
+由于单个联系人不能拥有user\_id列，并且单个用户不能拥有contact\_id列，因此多对多关系依赖于连接两者的数据中枢表。 这个表的常规命名是通过将两个单个表名放在一起，按字母顺序排序，并用下划线分隔它们来完成。
 
-因此，由于我们要链接用户和联系人，我们的数据透视表应该命名为contacts\_users（如果您想自定义表名，请将其作为第二个参数传递给belongsToMany（）方法）。 它需要两列：contact\_id和user\_id
+因此，由于我们要链接用户和联系人，我们的数据中枢表应该命名为contacts\_users（如果您想自定义表名，请将其作为第二个参数传递给belongsToMany（）方法）。 它需要两列：contact\_id和user\_id
 
 就像hasmany\(\)一样，我们可以访问相关项的集合，但这一次它是来自双方的（示例5-50\)
 
@@ -269,6 +269,268 @@ $contact->users->each(function ($user) {
     // do something
 });
 $donors = $user->contacts()->where('status', 'donor')->get();
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+**从中枢表获取数据**
+
+多对多关系有一个中枢表，中枢表内字段越少越好,但是有些时候需要在中枢表内存储信息,比如有时候你希望在中枢表内存放created\_at字段，来查看关系何时被创建的。
+
+为了存储这些字段,你需要将它们添加到关系定义中，如示例5-51,你可以用withPivot\(\)定义特殊字段,也可以用withTimestamps\(\)添加created\_at 和 updated\_at 时间戳
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-51. Adding fields to a pivot record" %}
+```php
+public function contacts() {
+    return $this->belongsToMany(Contact::class) 
+        ->withTimestamps()
+        ->withPivot('status', 'preferred_greeting');
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+当您通过关系获取模型实例时，它上面会有一个Pivot属性,它表示在中枢表中的位置.如示例5-52
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-52. Getting data from a related item’s pivot entry" %}
+```php
+$user = User::first();
+
+$user->contacts->each(function ($contact) { 
+echo sprintf(
+        'Contact associated with this user at: %s',
+        $contact->pivot->created_at
+    );
+});
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+你可以用as\(\)自定义中枢键,如示例5-53
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-53. Customizing the pivot attribute name" %}
+```php
+// User model
+public function groups() {
+    return $this->belongsToMany(Group::class)
+     ->withTimestamps() 
+     ->as('membership');
+}
+// Using this relationship:
+User::first()->groups->each(function ($group) { 
+    echo sprintf(
+        'User joined this group at: %s',
+        $group->membership->created_at
+    );
+});
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+> 附加和分离多对多关系项目
+>
+> 由于您的数据透视表可以拥有自己的属性，因此您需要能够在附加多对多相关项时设置这些属性。 您可以通过将数组作为第二个参数传递来保存
+
+```php
+$user = User::first();
+$contact = Contact::first();
+$user->contacts()->save($contact, ['status' => 'donor']);
+```
+
+> 此外，您可以使用attach\(\)和detach\(\)，而不是传递相关项的实例，您只需传递一个ID即可。它们的工作原理与save\(\)相同，但也可以接受一个ID数组，而无需重命名像attachmany\(\)。
+
+```php
+$user = User::first();
+    $user->contacts()->attach(1);
+    $user->contacts()->attach(2, ['status' => 'donor']);
+    $user->contacts()->attach([1, 2, 3]);
+    $user->contacts()->attach([
+        1 => ['status' => 'donor'],
+        2,
+        3,
+]);
+$user->contacts()->detach(1);
+$user->contacts()->detach([1, 2]);
+$user->contacts()->detach(); // Detaches all contacts
+```
+
+> 如果您的目标不是附加或分离，而是颠倒当前的附加状态，那么您需要toggle\(\)方法。当使用toggle\(\)时，如果给定的ID当前已附加，将被分离；如果当前已分离，将附加：
+
+> `$user->contacts()->toggle([1, 2, 3]);`  
+> 还可以使用updateExistingPivot\(\)仅对中枢记录进行更改：
+
+```php
+$user->contacts()->updateExistingPivot($contactId, [
+    'status' => 'inactive',
+]);
+```
+
+> 如果要替换当前关系，有效地分离所有以前的关系并附加新关系，可以将数组传递给sync\(\)。
+
+```php
+$user->contacts()->sync([1, 2, 3]);
+      $user->contacts()->sync([
+          1 => ['status' => 'donor'],
+          2,
+          3,
+]);
+```
+
+**多态性**
+
+请记住，我们的多态关系是我们有多个对应于相同关系的Eloquent类。 我们现在要使用Stars（如收藏夹）。 用户可以为联系人和事件加注星标，这称多态的来源：有多个类型的对象的单个接口
+
+所以，我们需要三张表三个模型,Star,Contact,Event，contacts与events表保持正常,starts表包含id,starrable\_id和starrable\_type字段,对于每个星星，我们将定义哪种“类型”（例如，联系人或事件）以及该类型的ID（例如，1）
+
+让我们创建模型,如示例5-54
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-54. Creating the models for a polymorphic starring system" %}
+```php
+class Star extends Model {
+    public function starrable() {
+        return $this->morphTo(); 
+    }
+}
+class Contact extends Model {
+    public function stars() {
+        return $this->morphMany(Star::class, 'starrable');
+    }
+}
+class Event extends Model {
+    public function stars() {
+        return $this->morphMany(Star::class, 'starrable'); 
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+所以我们如何创建一个Star?
+
+```php
+$contact = Contact::first();
+$contact->stars()->create();
+```
+
+非常简单，联系人现在被标星了.
+
+为了找到给定联系人上的所有星，我们调用stars\(\)方法，如示例5-55所示
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-55. Retrieving the instances of a polymorphic relationship" %}
+```php
+$contact = Contact::first();
+$contact->stars->each(function ($star) { 
+    // Do stuff
+});
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+如果我们有一个Star的实例，我们可以通过调用我们morphTo关系的方法来获得它的目标，在这个上下文中它是starrable\(\)，如示例5-56
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-56. Retrieving the target of a polymorphic instance" %}
+```php
+$stars = Star::all();
+$stars->each(function ($star) {
+    var_dump($star->starrable); // An instance of Contact or Event
+});
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+最后，你可能想知道，“如果我想知道是谁星标这个联系人怎么办？”这是一个很好的问题。 这就像在星星表中添加user\_id一样简单，然后设置用户有多个星星和星星属于一个用户 - 一对多的关系（例5-57）。 星表几乎成为用户与您的联系人和活动之间的数据中枢表
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-57. Extending a polymorphic system to differentiate by user" %}
+```text
+class Star extends Model {
+    public function starrable() {
+        return $this->morphsTo; 
+    }
+    public function user() {
+        return $this->belongsTo(User::class); 
+    }
+}
+class User extends Model {
+    public function stars() {
+        return $this->hasMany(Star::class); 
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+就这样！现在可以运行$star-&gt;user或$user-&gt;stars来查找用户的星列表或从星中查找星标的用户。另外，当你创建一个新的星时，可以传递用户
+
+```php
+$user = User::first();
+$event = Event::first();
+$event->stars()->create(['user_id' => $user->id]);
+```
+
+**多对多多态**
+
+关系类型中最复杂和最不常见的是，多对多的多形态关系就像多态关系
+
+这种关系类型最常见的例子是标签，我会保证它的安全，并以此为例。 让我们假设您希望能够标记联系人和事件。 多对多多态的唯一性在于它是多对多的：每个标签可以应用于多个项目，每个标记的项目可能有多个标签。 除此之外，它还是多态的：标签可以与几种不同类型的项目相关联。 对于数据库，我们将从多态关系的正常结构开始，并且添加一个数据中枢表
+
+这意味着我们需要一个联系人表，一个事件表和一个标签表，所有表格都像普通的ID和你想要的任何属性，以及一个新的taggables表，它将包含tag\_id，taggable\_id和taggable\_type字段。 taggables表中的每个条目都将标记与其中一个可标记内容类型相关联
+
+如示例5-58，我们将在模型上定义关系
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-58. Defining a polymorphic many-to-many relationship" %}
+```text
+class Contact extends Model {
+    public function tags() {
+        return $this->morphToMany(Tag::class, 'taggable'); 
+    }
+}
+class Event extends Model {
+    public function tags() {
+        return $this->morphToMany(Tag::class, 'taggable'); 
+    }
+}
+class Tag extends Model {
+    public function contacts() {
+        return $this->morphedByMany(Contact::class, 'taggable'); 
+    }
+    public function events() {
+        return $this->morphedByMany(Event::class, 'taggable'); 
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+然后创建第一个标签
+
+```php
+$tag = Tag::firstOrCreate(['name' => 'likes-cheese']);
+$contact = Contact::first();
+$contact->tags()->attach($tag->id);
+```
+
+然后我们像平时一样获取关系结果,如示例5-59
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-59. Accessing the related items from both sides of a many-to-many polymorphic relationship" %}
+```php
+$contact = Contact::first();
+$contact->tags->each(function ($tag) { 
+    // Do stuff
+});
+$tag = Tag::first();
+
+$tag->contacts->each(function ($contact) { 
+// Do stuff
+});
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
