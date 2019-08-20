@@ -204,3 +204,72 @@ class User extends Model {
 
 **Has one through**
 
+hasOneThrough\(\)与hasManyThrough\(\)类似，但不是通过中间项访问许多相关项，而是通过单个中间项访问单个相关项
+
+如果用户属于一个公司,公司只有一个电话号,而你希望通过提取用户公司的电话号码来获取该用户的电话号码，那该怎么办？这是hasOneThrough\(\)该干的事
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-47. Defining a has-one-through relationship" %}
+```php
+class User extends Model {
+    public function phoneNumber() {
+        return $this->hasOneThrough(PhoneNumber::class, Company::class); 
+    }
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+**多对多**
+
+现在变的复杂起来了,让我们考虑一种CRM情况,一个用户对应多个联系人,每个联系人又关联着多个用户.
+
+如示例5-48，我们在用户上定义关系
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-48. Defining a many-to-many relationship" %}
+```php
+class User extends Model {
+    public function contacts() {
+        return $this->belongsToMany(Contact::class); 
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+反向类似5-49
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-49. Defining a many-to-many relationship’s inverse" %}
+```php
+class Contact extends Model {
+    public function users() {
+        return $this->belongsToMany(User::class); 
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+由于单个联系人不能拥有user\_id列，并且单个用户不能拥有contact\_id列，因此多对多关系依赖于连接两者的数据透视表。 这个表的常规命名是通过将两个单个表名放在一起，按字母顺序排序，并用下划线分隔它们来完成。
+
+因此，由于我们要链接用户和联系人，我们的数据透视表应该命名为contacts\_users（如果您想自定义表名，请将其作为第二个参数传递给belongsToMany（）方法）。 它需要两列：contact\_id和user\_id
+
+就像hasmany\(\)一样，我们可以访问相关项的集合，但这一次它是来自双方的（示例5-50\)
+
+{% code-tabs %}
+{% code-tabs-item title="Example 5-50. Accessing the related items from both sides of a many-to-many relationship" %}
+```php
+$user = User::first();
+$user->contacts->each(function ($contact) {
+    // do something
+}
+$contact = Contact::first();
+$contact->users->each(function ($user) { 
+    // do something
+});
+$donors = $user->contacts()->where('status', 'donor')->get();
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
