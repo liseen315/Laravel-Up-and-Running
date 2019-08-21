@@ -31,7 +31,7 @@ Route::post('post-route', function (Request $request) {
 >
 > 当你在命名空间类（例如控制器）使用facade时，都必须导入完整的命名空间路径到文件顶部,例如\(Illuminate\Support\Facades\Request\)
 >
-> 因此，一些facades也有一个伴生的全局辅助功能。如果这些助手函数不带参数运行，它们将公开与外观相同的语法（例如，request\(\)-&gt;has（）与request::has\(\)相同）。当您向它们传递参数时，它们还具有默认行为（例如，请求（“firstname”）是request\(\)-&gt;input\('firstName'\)的快捷方式）。
+> 因此，一些facades也有一个伴生的全局辅助功能。如果这些助手函数不带参数运行，它们将公开与外观相同的语法（例如，request\(\)-&gt;has\(\)与request::has\(\)相同）。当您向它们传递参数时，它们还具有默认行为（例如，request\("firstname"\)是request\(\)-&gt;input\('firstName'\)的快捷方式）。
 >
 > 对于请求，我们已经讨论了注入请求对象的实例，但是您也可以使用请求facade或request\(\)全局助手。请看第10章了解更多信息。
 
