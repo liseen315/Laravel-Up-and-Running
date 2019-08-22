@@ -179,7 +179,7 @@
   * [表单请求](shou-ji-he-chu-li-yong-hu-shu-ju/biao-dan-qing-qiu/README.md)
     * [创建一个表单请求](shou-ji-he-chu-li-yong-hu-shu-ju/biao-dan-qing-qiu/chuang-jian-yi-ge-biao-dan-qing-qiu.md)
     * [使用表单请求](shou-ji-he-chu-li-yong-hu-shu-ju/biao-dan-qing-qiu/chuang-jian-yi-ge-biao-dan-qing-qiu-1.md)
-  * [Eloquent 模型批量分配](shou-ji-he-chu-li-yong-hu-shu-ju/eloquent-mo-xing-pi-liang-fen-pei.md)
+  * [Eloquent 模型批量赋值](shou-ji-he-chu-li-yong-hu-shu-ju/eloquent-mo-xing-pi-liang-fen-pei.md)
   * [{{ 与 {!!](shou-ji-he-chu-li-yong-hu-shu-ju/versus.md)
   * [测试](shou-ji-he-chu-li-yong-hu-shu-ju/ce-shi.md)
   * [总结](shou-ji-he-chu-li-yong-hu-shu-ju/zong-jie.md)
