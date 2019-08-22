@@ -187,6 +187,7 @@
   * [Artisan 介绍](artisan-he-tinker/artisan-jie-shao.md)
   * [基础Artisan命令](artisan-he-tinker/ji-chu-artisan-ming-ling/README.md)
     * [选项](artisan-he-tinker/ji-chu-artisan-ming-ling/xuan-xiang.md)
+    * [分组的命令](artisan-he-tinker/ji-chu-artisan-ming-ling/fen-zu-de-ming-ling.md)
   * [编写自定义Artisan命令](artisan-he-tinker/bian-xie-zi-ding-yi-artisan-ming-ling.md)
   * [在普通代码调用Artisan命令](artisan-he-tinker/zai-pu-tong-dai-ma-tiao-yong-artisan-ming-ling.md)
   * [Tinker](artisan-he-tinker/tinker.md)
