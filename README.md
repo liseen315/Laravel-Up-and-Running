@@ -9,7 +9,7 @@
 5. [数据库和Eloquent](shu-ju-ku-he-eloquent/)
 6. [前端组件](qian-duan-zu-jian/)
 7. [收集和处理用户数据](shou-ji-he-chu-li-yong-hu-shu-ju/)
-8. Artisan and Tinker
+8. [Artisan 和 Tinker](artisan-he-tinker/)
 9. User Authentication and Authorization
 10. Requests Responses and Middleware
 11. The Container
