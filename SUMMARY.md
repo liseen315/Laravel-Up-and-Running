@@ -194,4 +194,7 @@
   * [Laravel Dump 服务](artisan-he-tinker/laravel-dump-fu-wu.md)
   * [测试](artisan-he-tinker/ce-shi.md)
   * [总结](artisan-he-tinker/zong-jie.md)
+* [用户认证与授权](yong-hu-ren-zheng-yu-shou-quan/README.md)
+  * [用户模型与迁移](yong-hu-ren-zheng-yu-shou-quan/yong-hu-mo-xing-yu-qian-yi.md)
+  * [使用auth\(\)全局辅助和Auth Facade](yong-hu-ren-zheng-yu-shou-quan/shi-yong-auth-quan-ju-fu-zhu-he-auth-facade.md)
 
