@@ -100,3 +100,17 @@ class User extends Model implements
 >
 > 如果对这些陌生，请查看第五章然后继续阅读。
 
+我们能从模型中学到些什么呢?首先,Laravel通过类名推断，users存在于users 表格。当创建一个新用户，我们需要填写name,email,以及password属性。当将user作为JSON输出时,排除remember\_token和password属性。到目前为止看起来还不错。
+
+我们还可以从Illuminate\Foundation \Auth看到一些框架特性\(认证、授权和重置密码的能力\)，这些特性不仅仅可以用于User模型，理论还可以用于其他模型，可以单独和一起使用。
+
+> 契约和接口
+>
+> 你可能注意到，有时候我会写单词"contract"有时会写成"interface"。Laravel大多数接口都位于Contracts命名空间下。
+>
+> PHP接口本质上是两个类之间的协议，其中一个类将以某种方式“行为”。这有点像他们之间的一个契约，把它当作一个契约来考虑比把它称为接口更能赋予这个名字内在的意义。
+>
+> 但最后，它们是相同的：一个类将为某些方法提供特定的协议。
+>
+> 在相关的说明中，Illuminate\Contracts命名空间包含一组Laravel组件实现的接口和typehint。 这样可以轻松开发实现相同接口的类似组件，并将它们交换到您的应用程序中，代替Illuminate组件。 例如，当Laravel核心和组件typehint邮件程序时，它们不会键入Mailer类。 相反，他们typehint了Mailer契约（接口），使您可以轻松提供自己的邮件。 要了解有关如何执行此操作的更多信息，请查看第11章
+
