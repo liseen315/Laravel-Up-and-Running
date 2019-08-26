@@ -10,7 +10,7 @@
 6. [前端组件](qian-duan-zu-jian/)
 7. [收集和处理用户数据](shou-ji-he-chu-li-yong-hu-shu-ju/)
 8. [Artisan 和 Tinker](artisan-he-tinker/)
-9. User Authentication and Authorization
+9. [用户认证与授权](yong-hu-ren-zheng-yu-shou-quan/)
 10. Requests Responses and Middleware
 11. The Container
 12. Testing
