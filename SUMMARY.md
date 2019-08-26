@@ -194,6 +194,7 @@
     * [使用输入](artisan-he-tinker/bian-xie-zi-ding-yi-artisan-ming-ling/shi-yong-shu-ru.md)
     * [提示](artisan-he-tinker/bian-xie-zi-ding-yi-artisan-ming-ling/ti-shi.md)
     * [输出](artisan-he-tinker/bian-xie-zi-ding-yi-artisan-ming-ling/shu-chu.md)
+    * [基于闭包的命令](artisan-he-tinker/bian-xie-zi-ding-yi-artisan-ming-ling/ji-yu-bi-bao-de-ming-ling.md)
   * [在普通代码调用Artisan命令](artisan-he-tinker/zai-pu-tong-dai-ma-tiao-yong-artisan-ming-ling.md)
   * [Tinker](artisan-he-tinker/tinker.md)
   * [Laravel Dump 服务](artisan-he-tinker/laravel-dump-fu-wu.md)
