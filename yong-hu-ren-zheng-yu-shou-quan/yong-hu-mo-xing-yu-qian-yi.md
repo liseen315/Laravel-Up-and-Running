@@ -114,3 +114,13 @@ class User extends Model implements
 >
 > 在相关的说明中，Illuminate\Contracts命名空间包含一组Laravel组件实现的接口和typehint。 这样可以轻松开发实现相同接口的类似组件，并将它们交换到您的应用程序中，代替Illuminate组件。 例如，当Laravel核心和组件typehint邮件程序时，它们不会键入Mailer类。 相反，他们typehint了Mailer契约（接口），使您可以轻松提供自己的邮件。 要了解有关如何执行此操作的更多信息，请查看第11章
 
+Authenticatable契约必选方法\(例如,getAuthIdentifier\(\)\)，用于允许框架向auth系统验证该模型的实例。Authenticatable包含的方法需要带Eloquent模型的契约。
+
+Authorizable契约必选方法\(can\(\)\)，该方法允许框架在不同的上下文中为该模型的实例授权访问权限。不出所料，Authorizable提供的方法将满足Eloquent模型的Authorizable契约。
+
+最后，CanResetPassword契约的方法（getEmail ForPasswordReset\(\), sendPasswordResetNotification\(\)），用于重置密码，CanResetPassword提供了满足Eloquent模型的合同的方法。
+
+到此，我们可以轻松的在数据库内表述用户\(通过迁移\)，并使用一个模型实例将其提取，该模型实例可以进行身份验证（登录和退出），授权（检查对特定资源的访问权限）和发送一个密码重设邮件。
+
+
+
