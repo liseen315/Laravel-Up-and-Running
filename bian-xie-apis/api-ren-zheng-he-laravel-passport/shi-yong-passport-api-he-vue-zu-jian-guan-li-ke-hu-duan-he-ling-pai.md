@@ -53,3 +53,27 @@ const app = new Vue({ el: '#app'});
 <passport-personal-access-tokens></passport-personal-access-tokens>
 ```
 
+&lt;passport-clients&gt;显示用户创建的所有客户端。这意味着当他们登录到tweeter时，Spacebook的创建者将看到这里列出的Spacebook客户端。
+
+&lt;passport-authorized-clients&gt;展示授权访问账号的所有客户端，这意味着，任何同时拥有SpaceBook和Tweeeter账户的用户都可以看到列出的SpaceBook。
+
+&lt;passport-personal-access-tokens&gt;显示用户创建的个人访问令牌，例如RaceBook的创建者，SpaceBook的竞争者，将看到他们用来测试Tweeter API的个人访问令牌。
+
+如果您正在安装新的laravel，并想测试这些，有如下几个步骤：
+
+1. 按照本章前面的说明安装Passport
+2. 在你的命令行执行如下命令
+
+```text
+php artisan vendor:publish --tag=passport-components
+npm install
+npm run dev
+php artisan make:auth
+```
+
+   3. 打开resources/views/home.blade.php，在&lt;div class="card-body"&gt; 下面添加vue引用（例如&lt;passport-clients&gt;&lt;/passport-clients&gt;）。
+
+如果你愿意的话也可以直接使用这些组件，你也可以把他们作为引用点来理解API使用，并以你喜欢的格式创建前端组件。
+
+
+
